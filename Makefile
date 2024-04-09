@@ -15,7 +15,7 @@ RC = $(shell find . -type f -name '*.go' -not -path "./vendor/*")
 .PHONY: all apk rebuild help prepare clean distclean \
         fmt simplify vet tidy vendor commit
 
-all: hellofyne
+all: $(PRJ)
 
 apk: $(APK)
 
@@ -91,10 +91,10 @@ commit: clean
 	git commit -am $(GIT_MESSAGE)
 	git push
 
-hellofyne: *.go go.sum go.mod
+$(PRJ): *.go go.sum go.mod
 	@go build $(LDFLAGS) -o $(PRJ) $(PRJ)
 
-hellofyne.apk: *.go go.sum go.mod
+$(APK): *.go go.sum go.mod
 	fyne package -os $(OS_ANDROID) -appID $(ANDROID_ID) -icon $(ANDROID_ICON)
 
 # EOF: "Makefile"
