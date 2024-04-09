@@ -1,6 +1,6 @@
 # Prepare build enviroment
 
-## Inttall Go
+## Install Go
 As you wish.
 
 ## Install make
@@ -10,7 +10,7 @@ $ apt install make
 
 ## Install Fyne (look fyne.io)
 ```
-go install fyne.io/fyne/v2/cmd/fyne@latest
+$ go install fyne.io/fyne/v2/cmd/fyne@latest
 ```
 Add ~/go/bin to PATH.
 

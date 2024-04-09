@@ -22,21 +22,21 @@ apk: $(APK)
 rebuild: clean all
 
 help:
-	@echo "make prepare        - install (apt) dependencies for build"
-	@echo "make all            - full build (by default)"
-	@echo "make apk            - build apk for Android"
-	@echo "make rebuild        - clean and full rebuild"
-	@echo "make clean          - clean"
-	@echo "make distclean      - full clean (go.mod, go.sum)"
-	@echo "make fmt            - format Go sources"
-	@echo "make simplify       - simplify Go sources (go fmt -s)"
-	@echo "make vet            - report likely mistakes (go vet)"
-	@echo "make go.mod         - generate go.mod"
-	@echo "make go.sum         - generate go.sum"
-	@echo "make tidy           - automatic update go.sum by tidy"
-	@echo "make vendor         - create vendor"
-	@echo "make commit         - auto commit by git"
-	@echo "make help           - this help"
+	@echo "make prepare   - install (apt) dependencies for build"
+	@echo "make all       - full build (by default)"
+	@echo "make apk       - build apk for Android"
+	@echo "make rebuild   - clean and full rebuild"
+	@echo "make clean     - clean"
+	@echo "make distclean - full clean (go.mod, go.sum)"
+	@echo "make fmt       - format Go sources"
+	@echo "make simplify  - simplify Go sources (go fmt -s)"
+	@echo "make vet       - report likely mistakes (go vet)"
+	@echo "make go.mod    - generate go.mod"
+	@echo "make go.sum    - generate go.sum"
+	@echo "make tidy      - automatic update go.sum by tidy"
+	@echo "make vendor    - create vendor"
+	@echo "make commit    - auto commit by git"
+	@echo "make help      - this help"
 
 checkroot:
 ifneq ($(shell whoami), root)
