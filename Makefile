@@ -6,6 +6,8 @@ APK = $(PRJ).apk
 OS_ANDROID = android/arm64
 ANDROID_ID = com.example.$(PRJ)
 ANDROID_ICON = Icon.png
+APP_VERSION = 1.0
+APP_BUILD = 1
 
 GIT_MESSAGE = "auto commit"
 
@@ -95,6 +97,8 @@ $(PRJ): *.go go.sum go.mod
 	@go build $(LDFLAGS) -o $(PRJ) $(PRJ)
 
 $(APK): *.go go.sum go.mod
-	fyne package -os $(OS_ANDROID) -appID $(ANDROID_ID) -icon $(ANDROID_ICON)
+	fyne package -os $(OS_ANDROID) \
+		-appID $(ANDROID_ID) -icon $(ANDROID_ICON) \
+		-appVersion $(APP_VERSION) -appBuild $(APP_BUILD)
 
 # EOF: "Makefile"
