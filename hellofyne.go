@@ -19,12 +19,12 @@ func main() {
 	a := app.New()
 	
 	// Create window
-	w := a.NewWindow("Hello World")
+	w := a.NewWindow("Hello Fyne!")
 	w.Resize(fyne.NewSize(640, 480))
 	
 	// Create widgets
 	label := widget.NewLabel("Hello World!")
-	//label.TextStyle.Bold = true
+	label.TextStyle.Bold = true
 
 	entry := widget.NewEntry()
 	entry.TextStyle.Monospace = true
@@ -50,7 +50,6 @@ func main() {
 
 	// Create containers/spacers/layout
 	spacer := layout.NewSpacer
-
 	vbox := container.NewBorder(
 		container.NewCenter(label), // top
 		container.NewHBox(btnDo, btnClear, spacer(), btnQuit), // bottom
