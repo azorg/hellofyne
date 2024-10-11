@@ -5,7 +5,7 @@ PRJ = hellofyne
 APK = $(PRJ).apk
 OS_ANDROID = android/arm64
 ANDROID_ID = com.example.$(PRJ)
-ICON = icon.png
+ICON = Icon.png
 APP_VERSION = 1.0
 APP_BUILD = 1
 
@@ -28,6 +28,7 @@ help:
 	@echo "make prepare     - install (go get) Go dependencies for build"
 	@echo "make all         - full build (by default)"
 	@echo "make apk         - build apk for Android"
+	@echo "make mobile      - build application in a simulated mobile window"
 	@echo "make linux       - build package for Linux"
 	@echo "make windows     - build package for Windows"
 	@echo "make rebuild     - clean and full rebuild"
@@ -100,7 +101,11 @@ commit: clean
 	git push
 
 $(PRJ): *.go go.sum go.mod
+	@#~/go/bin/fyne build
 	@go build $(LDFLAGS) -o $(PRJ) $(PRJ)
+
+mobile: *.go go.sum go.mod
+	@go build $(LDFLAGS) -tags mobile -o $(PRJ) $(PRJ)
 
 linux: *.go go.sum go.mod
 	~/go/bin/fyne package -os linux --icon $(ICON)

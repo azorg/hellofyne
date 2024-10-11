@@ -1,0 +1,16 @@
+Website = "https://github.com/azorg/hellofyne"
+
+[Details]
+	Icon = "Icon.png"
+	Name = "Hello, world!"
+	ID = "com.example.hellofyne"
+	Version = "1.0.0"
+	Build = 1
+
+[LinuxAndBSD]
+	GenericName = "hellofyne"
+	Categories = ["stuff"]
+	Comment = "Hello world"
+	Keywords = ["fyne", "hello"]
+	ExecParams = ""
+
