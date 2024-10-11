@@ -6,7 +6,7 @@ APK = $(PRJ).apk
 OS_ANDROID = android/arm64
 ANDROID_ID = com.example.$(PRJ)
 ICON = Icon.png
-APP_VERSION = 1.0
+APP_VERSION = 1.0.0
 APP_BUILD = 1
 
 GIT_MESSAGE = "auto commit"
