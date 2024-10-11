@@ -27,6 +27,7 @@ help:
 	@echo "make prepare-sys - install (apt) system dependencies for build"
 	@echo "make prepare     - install (go get) Go dependencies for build"
 	@echo "make all         - full build (by default)"
+	@echo "make run         - run application"
 	@echo "make apk         - build apk for Android"
 	@echo "make mobile      - build application in a simulated mobile window"
 	@echo "make linux       - build package for Linux"
@@ -99,6 +100,9 @@ commit: clean
 	git add .
 	git commit -am $(GIT_MESSAGE)
 	git push
+
+run: *.go go.sum go.mod
+	@go run $(LDFLAGS) $(PRJ)
 
 $(PRJ): *.go go.sum go.mod
 	@#~/go/bin/fyne build
