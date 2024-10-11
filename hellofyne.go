@@ -3,25 +3,25 @@
 package main
 
 import (
-	"os"
 	"log"
+	"os"
 	"time"
 
 	"fyne.io/fyne/v2" // fyne
 	"fyne.io/fyne/v2/app"
-	"fyne.io/fyne/v2/widget"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/layout"
+	"fyne.io/fyne/v2/widget"
 )
 
 func main() {
 	//os.Setenv("FYNE_SCALE", "0.8") // FIXME
 	a := app.New()
-	
+
 	// Create window
 	w := a.NewWindow("Hello Fyne!")
 	w.Resize(fyne.NewSize(640, 480))
-	
+
 	// Create widgets
 	label := widget.NewLabel("Hello World!")
 	label.TextStyle.Bold = true
@@ -42,7 +42,7 @@ func main() {
 		entry.SetText(
 			entry.Text + time.Now().Format(time.DateTime) + " " + msg + "\n")
 	})
-	
+
 	btnClear := widget.NewButton("Clear", func() {
 		log.Print("button Clear pressed")
 		entry.SetText("")
@@ -51,7 +51,7 @@ func main() {
 	// Create containers/spacers/layout
 	spacer := layout.NewSpacer
 	vbox := container.NewBorder(
-		container.NewCenter(label), // top
+		container.NewCenter(label),                            // top
 		container.NewHBox(btnDo, btnClear, spacer(), btnQuit), // bottom
 		nil, nil, // left, right
 		entry, // center
