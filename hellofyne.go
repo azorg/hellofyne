@@ -39,8 +39,8 @@ func main() {
 	btnDo := widget.NewButton("Do", func() {
 		msg := "button Do pressed"
 		log.Print(msg)
-		entry.SetText(
-			entry.Text + time.Now().Format(time.DateTime) + " " + msg + "\n")
+		text := entry.Text + time.Now().Format(time.DateTime) + " " + msg + "\n"
+		entry.SetText(text)
 	})
 
 	btnClear := widget.NewButton("Clear", func() {
