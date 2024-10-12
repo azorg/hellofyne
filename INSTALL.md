@@ -8,6 +8,11 @@ As you wish.
 $ apt install make
 ```
 
+## Install system dependencies
+```
+$ sudo apt-get install -y gcc libgl1-mesa-dev xorg-dev
+```
+
 ## Install Fyne (look fyne.io)
 ```
 $ go install fyne.io/fyne/v2/cmd/fyne@latest
